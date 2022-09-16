@@ -1,0 +1,14 @@
+if true
+    table(style='width:80%', border='1', backGroundColor='grey')
+      tr
+        th Nombre
+        th Precio
+        th Foto
+      each producto in productos
+       tr
+        td= producto.nombre
+        td= producto.precio
+        td= producto.foto
+else
+  h3(style='color: black') no existen datos
+
