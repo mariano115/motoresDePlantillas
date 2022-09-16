@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{{#if mostrar}}
+
 <body>
   <div style="background-color: rgb(191, 191, 209); width: 50%;height: 40vh; display: flex ; justify-content: center;">
     <div>
@@ -9,25 +11,34 @@
 
       <form action="/producto" method="post">
         <div>
-          <label for="nombre"><b>Nombre</b></label>
+          <div>
+            <label for="nombre"><b>Nombre</b></label>
+          </div>
           <input id="nombre" type="text" name="nombre" />
         </div>
 
         <div>
-          <label for="precio"><b>Precio</b></label>
+          <div>
+            <label for="precio"><b>Precio</b></label>
+          </div>
           <input id="precio" type="text" name="precio" />
         </div>
 
         <div>
-          <label for="foto"><b>Foto</b></label>
+          <div>
+            <label for="foto"><b>Foto</b></label>
+          </div>
           <input id="foto" type="text" name="foto" />
         </div>
 
         <button style="margin-top: 10px;">Enviar</button>
       </form>
-      <button style="margin-top: 10px;"><a href="http://localhost:8081/table">Productos</a></button>
+      <button style="margin-top: 10px;"><a href='http://localhost:8080/table'>Productos</a></button>
     </div>
   </div>
 </body>
+{{else}}
+{{> table }}
+{{/if}}
 
 </html>

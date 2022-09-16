@@ -1,17 +1,21 @@
 {{#if true}}
-    <div class="table-responsive">
-        <table style="background-color: rgb(95, 95, 117); width: 70%">
-            <tr style="color: rgb(0, 0, 0); padding-left: 20px;"> <th>Nombre</th> <th>Precio</th> <th>Foto</th> </tr>
-           {{#each productos}}
-            <tr>
-                <td style="color: white;padding-left: 20px;"> {{this.nombre}} </td>
-                <td style="color: white;padding-left: 20px;"> {{this.precio}} </td>
-                <td style="color: white;padding-left: 20px;"> {{this.foto}} </td>
-            </tr>
-            {{/each}}
-        </table>
-    </div>
+<div class="table-responsive">
+    <table style="background-color: rgb(95, 95, 117); width: 70%">
+        <tr style="color: rgb(0, 0, 0); padding-left: 20px;">
+            <th style="color: white">Nombre</th>
+            <th style="color: white">Precio</th>
+            <th style="color: white">Foto</th>
+        </tr>
+        {{#each productos}}
+        <tr>
+            <td style="color: white;padding-left: 20px;"> {{this.nombre}} </td>
+            <td style="color: white;padding-left: 20px;"> {{this.precio}} </td>
+            <td style="color: white;padding-left: 20px;"> <img style="width: 50px;padding-left: 20px;"
+                    src={{this.foto}}> </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
 {{else}}
-   <h3 style="color: black">no existen datos</h3>
+<h3 style="color: black">no existen datos</h3>
 {{/if}}
-

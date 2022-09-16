@@ -7,8 +7,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const PORT = 8081;
+const PORT = 8080;
 let container;
+let mostrarLayout;
 
 const server = app.listen(PORT, () => {
   container = new Container();
@@ -38,7 +39,11 @@ app.set("views", "./views");
 //--------------------------------------------
 
 app.get("/", (req, res) => {
-  res.render("formulario");
+  mostrarLayout = true;
+  res.render("formulario", {
+    mostrar: mostrarLayout,
+    productos: productosList,
+  });
 });
 
 app.get("/productos", (req, res) => {
@@ -46,11 +51,24 @@ app.get("/productos", (req, res) => {
 });
 
 app.get("/table", (req, res) => {
-  res.render("table", { productos: productosList });
+  mostrarLayout = false;
+  res.render("formulario", {
+    mostrar: mostrarLayout,
+    productos: productosList,
+  });
+});
+
+app.post("/cambiarlayout", (req, res) => {
+  console.log("/cambiarlayout");
+  mostrarLayout = !mostrarLayout;
 });
 
 app.post("/producto", (req, res) => {
   container.addProduct(req.body);
   productosList.push(req.body);
-  res.render("formulario");
+  mostrarLayout = true;
+  res.render("formulario", {
+    mostrar: mostrarLayout,
+    productos: productosList,
+  });
 });
