@@ -1,14 +1,15 @@
 if true
-    table(style='width:80%', border='1', backGroundColor='grey')
-      tr
-        th Nombre
-        th Precio
-        th Foto
+    table(style='background-color: rgb(95, 95, 117); width: 70%')
+      tr(style='color: rgb(0, 0, 0); padding-left: 20px;')
+        th(style='color: white;') Nombre
+        th(style='color: white;') Precio
+        th(style='color: white;') Foto
       each producto in productos
        tr
-        td= producto.nombre
-        td= producto.precio
-        td= producto.foto
+        td(style='color: white;padding-left: 20px;')= producto.nombre
+        td(style='color: white;padding-left: 20px;')= producto.precio
+        td(style='color: white; padding-left: 20px;')
+          img(style='width: 50px;padding-left: 20px;' src=producto.foto)
 else
   h3(style='color: black') no existen datos
 

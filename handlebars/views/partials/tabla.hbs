@@ -1,12 +1,12 @@
 {{#if true}}
     <div class="table-responsive">
-        <table class="table table-dark">
-            <tr style="color: rgb(0, 255, 76);"> <th>Nombre</th> <th>Precio</th> <th>Foto</th> </tr>
+        <table style="background-color: rgb(95, 95, 117); width: 70%">
+            <tr style="color: rgb(0, 0, 0); padding-left: 20px;"> <th>Nombre</th> <th>Precio</th> <th>Foto</th> </tr>
            {{#each productos}}
             <tr>
-                <td> {{this.nombre}} </td>
-                <td> {{this.precio}} </td>
-                <td> {{this.foto}} </td>
+                <td style="color: white;padding-left: 20px;"> {{this.nombre}} </td>
+                <td style="color: white;padding-left: 20px;"> {{this.precio}} </td>
+                <td style="color: white;padding-left: 20px;"> {{this.foto}} </td>
             </tr>
             {{/each}}
         </table>

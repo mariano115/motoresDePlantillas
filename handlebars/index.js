@@ -1,6 +1,7 @@
 /* Importing the express module and then creating an instance of it. */
 const express = require("express");
 const { Container } = require("./Container");
+const hbs = require("express-handlebars");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -20,8 +21,21 @@ server.on("error", (error) =>
 
 const productosList = [];
 
+//--------------------------------------------
+
+app.engine(
+  "hbs",
+  hbs({
+    extname: ".hbs",
+    defaultLayout: "formulario.hbs",
+    layoutsDir: "./views",
+    partialsDir: "./views/partials",
+  })
+);
+app.set("view engine", "hbs");
 app.set("views", "./views");
-app.set("view engine", "ejs");
+
+//--------------------------------------------
 
 app.get("/", (req, res) => {
   res.render("formulario");
@@ -38,5 +52,5 @@ app.get("/table", (req, res) => {
 app.post("/producto", (req, res) => {
   container.addProduct(req.body);
   productosList.push(req.body);
-  res.status(200).send("el producto fue agregado correctamente");
+  res.render("formulario");
 });

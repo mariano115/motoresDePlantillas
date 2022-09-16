@@ -38,5 +38,5 @@ app.get("/table", (req, res) => {
 app.post("/producto", (req, res) => {
   container.addProduct(req.body);
   productosList.push(req.body);
-  res.status(200).send("el producto fue agregado correctamente");
+  res.render("formulario");
 });

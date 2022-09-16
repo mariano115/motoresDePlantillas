@@ -1,21 +1,21 @@
 doctype html
-.container.mt-3
-  .jumbotron
-    h1(style='color: blue') Ingrese Productos
+div(style='background-color: rgb(191, 191, 209); width: 50%;height: 40vh; display: flex ; justify-content: center;')
+  div
+    h1(style='color: blue') Ingrese datos
     br
     form(action='/producto' method='post')
-      .form-group
+      div
         label(for='nombre')
           b Nombre
-        input#nombre.form-control(type='text' name='nombre')
-      .form-group
+        input#nombre(type='text' name='nombre')
+      div
         label(for='precio')
           b Precio
-        input#precio.form-control(type='text' name='precio')
-      .form-group
+        input#precio(type='text' name='precio')
+      div
         label(for='foto')
           b Foto
-        input#foto.form-control(type='text' name='foto')
-      button.btn.btn-success.mt-3.mb-5 Enviar
-    button.btn.btn-success.mt-3.mb-5
-      a(href='http://localhost:8081/table') Productos
+        input#foto(type='text' name='foto')
+      button(style='margin-top: 10px;') Enviar
+    button(style='margin-top: 10px;')
+      a(href='http://localhost:8080/table') Productos

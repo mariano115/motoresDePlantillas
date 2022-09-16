@@ -6,7 +6,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const PORT = 8081;
+const PORT = 8080;
 let container;
 
 const server = app.listen(PORT, () => {
@@ -38,5 +38,5 @@ app.get("/table", (req, res) => {
 app.post("/producto", (req, res) => {
   container.addProduct(req.body);
   productosList.push(req.body);
-  res.status(200).send("el producto fue agregado correctamente");
+  res.render("formulario");
 });

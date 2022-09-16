@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
-  <div class="container mt-3" style="background-color: rgb(160, 160, 204); width: 50%; display: flex ; justify-content: center;">
-    <div class="jumbotron">
-      <h1 style="color: blue">Ingrese datos</h1>
+  <div style="background-color: rgb(191, 191, 209); width: 50%;height: 40vh; display: flex ; justify-content: center;">
+    <div>
+      <h1 style="color: blue">Ingrese Producto</h1>
       <br />
 
       <form action="/producto" method="post">
-        <div class="form-group">
-          <label for="nombre"><b style="color: white">Nombre</b></label>
-          <input id="nombre" class="form-control" type="text" name="nombre" />
+        <div>
+          <div>
+            <label for="nombre"><b>Nombre</b></label>
+          </div>
+          <input id="nombre" type="text" name="nombre" />
         </div>
 
-        <div class="form-group">
-          <label for="precio"><b style="color: white">Precio</b></label>
-          <input
-            id="precio"
-            class="form-control"
-            type="text"
-            name="precio"
-          />
+        <div>
+          <div>
+            <label for="precio"><b>Precio</b></label>
+          </div>
+          <input id="precio" type="text" name="precio" />
         </div>
 
-        <div class="form-group">
-          <label for="foto"><b style="color: white">Foto</b></label>
-          <input id="foto" class="form-control" type="text" name="foto" />
+        <div>
+          <div>
+            <label for="foto"><b>Foto</b></label>
+          </div>
+          <input id="foto" type="text" name="foto" />
         </div>
-
-        <button class="btn btn-success mt-3 mb-5">Enviar</button>
+        <button style="margin-top: 10px;">Enviar</button>
       </form>
-      <button class="btn btn-success mt-3 mb-5"><a href="http://localhost:8082/table">Productos</a></button>
+      <button style="margin-top: 10px;"><a href="http://localhost:8082/table">Productos</a></button>
     </div>
   </div>
- </body>
+</body>
+
 </html>
