@@ -20,8 +20,6 @@ server.on("error", (error) =>
   console.log({ mensaje: `Hubo un error: ${error.message}` })
 );
 
-const productosList = [];
-
 //--------------------------------------------
 
 app.engine(
@@ -42,7 +40,7 @@ app.get("/", (req, res) => {
   mostrarLayout = true;
   res.render("formulario", {
     mostrar: mostrarLayout,
-    productos: productosList,
+    productos: container.getAll(),
   });
 });
 
@@ -54,7 +52,7 @@ app.get("/table", (req, res) => {
   mostrarLayout = false;
   res.render("formulario", {
     mostrar: mostrarLayout,
-    productos: productosList,
+    productos: container.getAll(),
   });
 });
 
@@ -65,10 +63,9 @@ app.post("/cambiarlayout", (req, res) => {
 
 app.post("/producto", (req, res) => {
   container.addProduct(req.body);
-  productosList.push(req.body);
   mostrarLayout = true;
   res.render("formulario", {
     mostrar: mostrarLayout,
-    productos: productosList,
+    productos: container.getAll(),
   });
 });

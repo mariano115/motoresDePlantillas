@@ -18,8 +18,6 @@ server.on("error", (error) =>
   console.log({ mensaje: `Hubo un error: ${error.message}` })
 );
 
-const productosList = [];
-
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
@@ -32,11 +30,10 @@ app.get("/productos", (req, res) => {
 });
 
 app.get("/table", (req, res) => {
-  res.render("table", { productos: productosList });
+  res.render("table", { productos: container.getAll() });
 });
 
 app.post("/producto", (req, res) => {
   container.addProduct(req.body);
-  productosList.push(req.body);
   res.render("formulario");
 });
